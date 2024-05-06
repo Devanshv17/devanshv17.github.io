@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      background-color: black; /* Set background color to black */
+      color: white; /* Set text color to white */
+    }
+
+    .content {
+        margin-top: calc(var(--header-height) + 20px) !important;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 800px; /* Limit the maximum width of the tiles */
+  width: 100%; /* Ensure the tiles take up the full width */
+}
+
+.portfolio__item {
+  flex-basis: calc(50% - 2rem); /* Set the basis for flex to take 50% of the container width with a gap of 2rem */
+  max-width: calc(50% - 2rem); /* Set the maximum width to 50% of the container width with a gap of 2rem */
+  margin-bottom: 2rem; /* Add some bottom margin for spacing */
+  background-color: var(--dark-color-alt);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio__item {
+    flex-basis: calc(100% - 2rem); /* Set each item to take the full width minus the gap */
+    max-width: calc(100% - 2rem);
+  }
+}
+
+.portfolio__item img {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+.portfolio__details {
+  padding: 1rem;
+}
+
+.portfolio__name {
+  color: var(--white-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.portfolio__description {
+  color: var(--white-color);
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio__name:hover {
+  color: var(--first-color);
+}
+
+.portfolio__github {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  float: right;
+  text-decoration: none;
+}
+
+.portfolio__github:hover {
+  color: var(--first-color);
+}
+    /*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  
+  /*===== Colores =====*/
+  --first-color: #3664F4;
+  --dark-color: #070D1F;
+  --dark-color-alt: #282B3A;
+  --white-color: #E6E7E9;
+
+  /*===== Fuente y tipografia =====*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*===== BASE =====*/
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/*===== HEADER =====*/
+.header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 1.5rem;
+  background-color: var(--dark-color);
+  z-index: var(--z-fixed);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  color: var(--white-color);
+}
+
+.header__toggle {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: var(--z-fixed);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
+
+.nav__content {
+  height: 100%;
+  -ms-grid-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-rows: max-content 1fr max-content;
+  row-gap: 2rem;
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  padding: .25rem;
+  background-color: var(--dark-color-alt);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: .25rem;
+  margin-bottom: .8rem;
+  width: 56px;
+  height: 56px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav__img img {
+  width: 46px;
+}
+
+.nav__name {
+  display: block;
+  color: var(--white-color);
+}
+
+.nav__profesion {
+  font-size: var(--small-font-size);
+}
+
+.nav__menu {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.nav__item {
+  margin: 2.5rem 0;
+}
+
+.nav__link {
+  color: var(--white-color);
+}
+
+.nav__social {
+  padding-top: .5rem;
+}
+
+.nav__social-icon {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  margin-right: 1rem;
+}
+
+.nav__social-icon:hover {
+  color: var(--first-color);
+}
+
+/*Aparecer menu*/
+.show {
+  left: 0;
+}
+
+/*Active menu*/
+.active {
+  color: var(--first-color);
+}
+
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .header {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .header__logo, .header__toggle {
+    display: none;
+  }
+  .nav {
+    width: 100%;
+  }
+  .nav__content {
+    -ms-grid-columns: (max-content)[3];
+        grid-template-columns: repeat(3, -webkit-max-content);
+        grid-template-columns: repeat(3, max-content);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nav__close, .nav__profesion {
+    display: none;
+  }
+  .nav__perfil {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav__img {
+    width: 32px;
+    height: 32px;
+    margin-right: .5rem;
+    margin-bottom: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav__img img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav__item {
+    margin: 0 .25rem;
+  }
+  .nav__link {
+    padding: .5rem .8rem;
+    border-radius: .25rem;
+  }
+  .nav__link:hover {
+    background-color: var(--first-color);
+  }
+  .active {
+    background-color: var(--first-color);
+    color: var(--white-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="header__logo">Devansh Verma</a>
+    
+        <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+    
+        <nav class="nav" id="nav-menu">
+            <div class="nav__content bd-grid">
+    
+                <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+    
+                <div class="nav__perfil">
+                    <div class="nav__img">
+                        <img src="dp.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <a href="index.html" class="nav__name">Devansh Verma</a>
+                    </div>
+                </div>
+    
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="skills.html" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="portfolio.html" class="nav__link active">Portfolio</a></li>
+                         <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="nav__social">
+                  <a href="https://www.linkedin.com/in/devanshv17/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                  <a href="https://github.com/Devanshv17" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
+                  <a href="https://gitlab.com/Devanshv17" class="nav__social-icon"><ion-icon name="logo-gitlab"></ion-icon></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="portfolio">
+          <div class="portfolio__item">
+            <a href="https://restox.onrender.com">
+            <img src="restox.png" alt="Restox">
+            </a>
+            <div class="portfolio__details">
+              <a href="https://restox.onrender.com" class="portfolio__name">ReSTOX <ion-icon name="link-outline"></ion-icon></a>
+              <a href="https://github.com/Devanshv17/Real-Estate-Website" class="portfolio__github"><ion-icon name="logo-github"></ion-icon></a>
+              <p class="portfolio__description">An end-to-end real estate website with 3D views of properties and pin-point mapping of locations. It offers complete login functionality, including the ability to log in with Google. The website provides a comprehensive management system for listed properties, allowing users to effortlessly list and showcase their properties with detailed information and high-quality visuals. The platform's intuitive interface and advanced features enable seamless navigation, property search, and exploration, ensuring a user-friendly experience for both buyers and sellers.</p>
+              
+            </div>
+          </div>
+          <div class="portfolio__item">
+            <a herf="https://drive.google.com/drive/folders/1DetNwXS6o4kJfc1rx0pX1sAX5R68k-D-?usp=sharing">
+            <img src="entrex.png" alt="Entrex">
+            </a>
+            <div class="portfolio__details">
+              <a href="https://drive.google.com/drive/folders/1DetNwXS6o4kJfc1rx0pX1sAX5R68k-D-?usp=sharing" class="portfolio__name">Entrex <ion-icon name="link-outline"></ion-icon></a>
+              <a href="https://github.com/Devanshv17/Entrex" class="portfolio__github"><ion-icon name="logo-github"></ion-icon></a>
+              <p class="portfolio__description">This innovative app streamlines the entry-exit process at campus gates by leveraging QR code scanning technology. Students can register and log in using their @iitk.ac.in email addresses, ensuring secure authentication. Once logged in, the app's user-friendly interface displays a QR code scanner on the home screen. At the gates, students simply need to scan the designated refreshable QR codes to record their entry and exit times digitally. This efficient system eliminates the need for physical register books, reducing paper waste and promoting sustainability. With its simple and intuitive design, the app provides a hassle-free experience for students and security personnel alike, mitigating issues such as crowding and authentication problems.</p>
+              
+            </div>
+          </div>
+          <div class="portfolio__item">
+            <img src="project2.jpg" alt="Project 2">
+            <div class="portfolio__details">
+              <a href="project2_website.html" class="portfolio__name">Project 2 Name</a>
+              <a href="project2_github_link" class="portfolio__github"><ion-icon name="logo-github"></ion-icon></a>
+              <p class="portfolio__description">Description of Project 2</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <script>
+        /*===== MENU SHOW Y HIDDEN =====*/ 
+const navMenu = document.getElementById('nav-menu'),
+              toggleMenu = document.getElementById('nav-toggle'),
+              closeMenu = document.getElementById('nav-close')
+
+        /*SHOW*/ 
+        toggleMenu.addEventListener('click', ()=>{
+            navMenu.classList.toggle('show')
+        })
+
+        /*HIDDEN*/
+        closeMenu.addEventListener('click', ()=>{
+            navMenu.classList.remove('show')
+        })
+
+        /*===== ACTIVE AND REMOVE MENU =====*/
+        const navLink = document.querySelectorAll('.nav__link');   
+
+        function linkAction(){
+          /*Active link*/
+          navLink.forEach(n => n.classList.remove('active'));
+          this.classList.add('active');
+          
+          /*Remove menu mobile*/
+          navMenu.classList.remove('show')
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction));
+
+</script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+</body>
+</html>
