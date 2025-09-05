@@ -224,7 +224,7 @@
 
           <ul class="service-list">
 
-            <li class="service-item">
+            <li class="service-item" data-filter-link="app development">
               <div class="service-icon-box">
                 <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
               </div>
@@ -236,7 +236,7 @@
               </div>
             </li>
             
-            <li class="service-item">
+            <li class="service-item" data-filter-link="web development">
               <div class="service-icon-box">
                 <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
               </div>
@@ -248,7 +248,7 @@
               </div>
             </li>
 
-            <li class="service-item">
+            <li class="service-item" data-filter-link="ai/ml">
                 <div class="service-icon-box">
                   <img src="./assets/images/icon-ai.svg" alt="AI icon" width="40">
                 </div>
@@ -732,15 +732,11 @@
 
           <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
 
-            <!-- IMPORTANT: Replace with your Access Key -->
             <input type="hidden" name="access_key" value="4a149625-57f6-422a-bb63-027d9e13c68c">
-
-            <!-- Optional: Subject for the email -->
             <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
             
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
 
@@ -788,7 +784,7 @@
       const json = JSON.stringify(object);
       
       formResult.innerHTML = "Sending...";
-      formResult.style.display = "block"; // Make it visible
+      formResult.style.display = "block";
       
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -803,12 +799,10 @@
         if (response.status == 200) {
             formResult.innerHTML = jsonResponse.message;
         } else {
-            console.log(response);
             formResult.innerHTML = jsonResponse.message;
         }
       })
       .catch(error => {
-          console.log(error);
           formResult.innerHTML = "Something went wrong!";
       })
       .then(function() {
