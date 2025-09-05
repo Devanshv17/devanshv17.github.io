@@ -1,462 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devansh Verma</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-HFNZQS7OQ72+LjWO5dHjAV9y1NTSmm2YZokkf8AChfDDB1M5q4ZsCpDXQOlJJxVtMmRZhpE3lKhV1ST5MJ5Xdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devansh Verma - Personal Portfolio</title>
 
-<style>
-body {
-  background-color: black;
-  text-align: center;
-  color: #fff;
-  margin: 0;
-  display: flex; /* Use flexbox for layout */
-  flex-direction: column; /* Arrange items vertically */
-  min-height: 100vh; /* Set minimum height to fill viewport */
-}
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-* {
-  color: #fff;
-  text-decoration: none;
-}
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-.typewrite > .wrap {
-  border-right: 0.08em solid #fff;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-/*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-
-/*===== VARIABLES CSS =====*/
-:root {
-  --header-height: 3rem;
-  
-  /*===== Colores =====*/
-  --first-color: #3664F4;
-  --dark-color: #070D1F;
-  --dark-color-alt: #282B3A;
-  --white-color: #E6E7E9;
-
-  /*===== Fuente y tipografia =====*/
-  --body-font: 'Poppins', sans-serif;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-
-  /*===== z index =====*/
-  --z-fixed: 100;
-}
-
-@media screen and (min-width: 768px) {
-  :root {
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-  }
-}
-
-/*===== BASE =====*/
-*, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  font-weight: 500;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.bd-grid {
-  max-width: 1024px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-/*===== HEADER =====*/
-.header {
-  width: 100%;
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 1.5rem;
-  background-color: var(--dark-color);
-  z-index: var(--z-fixed);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header__logo {
-  color: var(--white-color);
-}
-
-.header__toggle {
-  font-size: 1.5rem;
-  color: var(--white-color);
-  cursor: pointer;
-}
-
-/*===== NAV =====*/
-@media screen and (max-width: 768px) {
-  .nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    width: 100%;
-    height: 100vh;
-    padding: 1.5rem 0;
-    z-index: var(--z-fixed);
-    -webkit-transition: .5s;
-    transition: .5s;
-  }
-}
-
-.nav__content {
-  height: 100%;
-  -ms-grid-rows: max-content 1fr max-content;
-      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
-      grid-template-rows: max-content 1fr max-content;
-  row-gap: 2rem;
-}
-
-.nav__close {
-  position: absolute;
-  right: 1.5rem;
-  font-size: 1.3rem;
-  padding: .25rem;
-  background-color: var(--dark-color-alt);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.nav__img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: .8rem;
-  width: 56px;
-  height: 56px;
-  background-color: var(--first-color);
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.nav__img img {
-  width: 56px;
-}
-
-.nav__name {
-  display: block;
-  color: var(--white-color);
-}
-
-.nav__profesion {
-  font-size: var(--small-font-size);
-}
-
-.nav__menu {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.nav__item {
-  margin: 2.5rem 0;
-}
-
-.nav__link {
-  color: var(--white-color);
-}
-
-.nav__social {
-  padding-top: .5rem;
-}
-
-.nav__social-icon {
-  font-size: 1.2rem;
-  color: var(--white-color);
-  margin-right: 1rem;
-}
-
-.nav__social-icon:hover {
-  color: var(--first-color);
-}
-
-/*Aparecer menu*/
-.show {
-  left: 0;
-}
-
-/*Active menu*/
-.active {
-  color: var(--first-color);
-}
-
-/*===== MEDIA QUERIES =====*/
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
-  }
-  .header {
-    height: calc(var(--header-height) + 1rem);
-  }
-  .header__logo, .header__toggle {
-    display: none;
-  }
-  .nav {
-    width: 100%;
-  }
-  .nav__content {
-    -ms-grid-columns: (max-content)[3];
-        grid-template-columns: repeat(3, -webkit-max-content);
-        grid-template-columns: repeat(3, max-content);
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    -webkit-column-gap: 1rem;
-            column-gap: 1rem;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .nav__close, .nav__profesion {
-    display: none;
-  }
-  .nav__perfil {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .nav__img {
-    width: 32px;
-    height: 32px;
-    margin-right: .5rem;
-    margin-bottom: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .nav__img img {
-    width: 40px;
-    border-radius: 50%;
-  }
-  .nav__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav__item {
-    margin: 0 .25rem;
-  }
-  .nav__link {
-    padding: .5rem .8rem;
-    border-radius: .25rem;
-  }
-  .nav__link:hover {
-    background-color: var(--first-color);
-  }
-  .active {
-    background-color: var(--first-color);
-    color: var(--white-color);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .bd-grid {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-
-
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="header">
-    <a href="index.html" class="header__logo">Devansh Verma</a>
 
-    <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+  <main>
 
-    <nav class="nav" id="nav-menu">
-        <div class="nav__content bd-grid">
+    <aside class="sidebar" data-sidebar>
 
-            <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+      <div class="sidebar-info">
 
-            <div class="nav__perfil">
-                <div class="nav__img">
-                    <img src="dp.jpg" alt="">
-                </div>
-                
-                <div>
-                    <a href="index.html" class="nav__name">Devansh Verma</a>
-                </div>
-            </div>
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar2.jpeg
+          " alt="Devansh Verma" width="80">
+        </figure>
 
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="skills.html" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Portfolio</a></li>
-                     <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-                </ul>
-            </div>
+        <div class="info-content">
+          <h1 class="name" title="Devansh Verma">Devansh Verma</h1>
 
-            <div class="nav__social">
-              <a href="https://www.linkedin.com/in/devanshv17/" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
-              <a href="https://github.com/Devanshv17" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
-              <a href="https://www.x.com/devanshv17?lang=en" class="nav__social-icon"><ion-icon name="logo-twitter"></ion-icon></a>
-            </div>
+          <p class="title">4th Year Undergraduate</p>
         </div>
-    </nav>
-</header>
 
-  <div class="content">
-    <h1>Hi, I'm Devansh Verma</h1>
-    <p class="typewrite" data-period="500" data-type='[ "A Web/App Developer. |", "An AL-ML Enthusiast. |","Experienced in DevOps Practices. |", "Learning Data Security. |", "I Just Love Tech. |" ]'>
-      <span class="wrap"></span>
-    </p>
-  </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-<script>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
 
-  
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:devanshv17@gmail.com" class="contact-link">devanshv17@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+                <ion-icon name="logo-github"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+                <p class="contact-title">Github</p>
+
+                <a href="https://github.com/devanshv17" class="contact-link" target="_blank">devanshv17</a>
+            </div>
+
+        </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2005-05-17">May 17, 2005
+              </time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Kanpur, Uttar Pradesh, India</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/devanshv17" class="social-link" target="Linkedin">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.github.com/devanshv17" class="social-link" target="Github">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://instagram.com/devanshv1705" class="social-link" target="Instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
 
 
-var TxtType = function(el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 500;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
 
-TxtType.prototype.tick = function() {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
 
-    if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    <div class="main-content">
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+      <nav class="navbar">
 
-    if (this.isDeleting) { delta /= 2; }
+        <ul class="navbar-list">
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-    }
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
 
-    setTimeout(function() {
-    that.tick();
-    }, delta);
-};
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
 
-window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i=0; i<elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-    }
-};
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
 
-/*===== MENU SHOW Y HIDDEN =====*/ 
-const navMenu = document.getElementById('nav-menu'),
-              toggleMenu = document.getElementById('nav-toggle'),
-              closeMenu = document.getElementById('nav-close')
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
 
-        /*SHOW*/ 
-        toggleMenu.addEventListener('click', ()=>{
-            navMenu.classList.toggle('show')
-        })
+        </ul>
 
-        /*HIDDEN*/
-        closeMenu.addEventListener('click', ()=>{
-            navMenu.classList.remove('show')
-        })
+      </nav>
 
-        /*===== ACTIVE AND REMOVE MENU =====*/
-        const navLink = document.querySelectorAll('.nav__link');   
 
-        function linkAction(){
-          /*Active link*/
-          navLink.forEach(n => n.classList.remove('active'));
-          this.classList.add('active');
-          
-          /*Remove menu mobile*/
-          navMenu.classList.remove('show')
-        }
-        navLink.forEach(n => n.addEventListener('click', linkAction));
 
-</script>
-<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am a results-oriented 4th-year Dual Degree student specializing in Mathematics and Scientific Computing. My academic journey is complemented by diverse, hands-on experience across finance, full-stack web development, and mobile app creation. I recently received a Pre-Placement Offer from Axxela for my performance as a Trading & Research intern, where I achieved the highest profitability among 33 interns.
+          </p>
+
+          <p>
+            My passion lies in building robust, scalable solutions to complex problems, whether it's developing an ML pipeline to predict financial market movements, engineering an on-device AI agent generator, or launching a full-stack video learning application that climbs to the top of the app store charts. I am driven by a desire to innovate and deliver impactful results.
+          </p>
+        </section>
+
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I Do</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">App Development</h4>
+                <p class="service-item-text">
+                  Cross-platform mobile app creation from concept to deployment on the App Store and Play Store using Flutter.
+                </p>
+              </div>
+            </li>
+            
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web Development</h4>
+                <p class="service-item-text">
+                  Full-stack development of secure and scalable web applications using MERN, Go, and Next.js.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-design.svg" alt="AI icon" width="40">
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">AI & Machine Learning</h4>
+                  <p class="service-item-text">
+                    Building and deploying ML pipelines, leveraging LLMs for NLP tasks, and creating on-device AI agents.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-photo.svg" alt="Finance icon" width="40">
+                </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Quantitative Trading</h4>
+                  <p class="service-item-text">
+                    Algorithmic trading strategy development, market analysis, and financial modeling using Python and ML.
+                  </p>
+                </div>
+              </li>
+
+          </ul>
+        </section>
+
+      </article>
+
+
+
+
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Indian Institute of Technology, Kanpur</h4>
+              <span>2021 — 2026</span>
+              <p class="timeline-text">
+                4th Year, Undergraduate in Mathematics and Scientific Computing.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Nalanda Academy, Kota</h4>
+              <span>2020 — 2022</span>
+              <p class="timeline-text">
+                CBSE (XII) with 90%.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+             <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Trading & Research Intern</h4>
+              <span>Axxela | May 2024 - July 2024</span>
+              <p class="timeline-text">
+                Generated €2,302 profit, achieving highest profitability. Built an ML pipeline using LSTM + XGBoost to predict SOFR fixes with an R2 score of 0.97. Received a PPO.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Founding Mobile Developer</h4>
+              <span>SuperLiving | Oct 2023 - Mar 2024</span>
+              <p class="timeline-text">
+                Led solo development of a video learning app, launching it on the Google Play Store and Apple App Store using Flutter and Firebase.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Flutter Development Intern</h4>
+              <span>CREW | Feb 2024 - May 2024</span>
+              <p class="timeline-text">
+                Developed mobile app screens from Figma designs, mastering Flutter's widget system and state management.
+              </p>
+            </li>
+            
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Web Development Intern</h4>
+              <span>ClinicBharat | Jan 2024 - Feb 2024</span>
+              <p class="timeline-text">
+                Developed a Queue Management System using the MERN stack to optimize appointment scheduling.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Languages</h5>
+              </div>
+              <p class="skill-text">C, C++, Go, Python, Dart, Javascript, MATLAB, Java, Shell, LATEX</p>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Software & Tools</h5>
+              </div>
+               <p class="skill-text">Flutter, AWS, Android Studio, Wordpress, Jira, MS Office Suite, DaVinci Resolve, Adobe Premiere Pro, Photoshop</p>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Libraries & Frameworks</h5>
+              </div>
+              <p class="skill-text">Llama-index, selenium, pyngrok, scikit-learn, XGBoost, gensim, tensorflow, hnswlib, React.js, Flask</p>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>App Development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web Development</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>AI/ML</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>App Development</button></li>
+              <li class="select-item"><button data-select-item>Web Development</button></li>
+              <li class="select-item"><button data-select-item>AI/ML</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Axxela SOFR Prediction</h3>
+                   <p class="project-category">AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Built an ML pipeline using LSTM + XGBoost to predict daily SOFR fixes, achieving a high R2 score of 0.97.</p>
+                  <div class="project-links">
+                    </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">SuperLiving Video Learning App</h3>
+                   <p class="project-category">App Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Led solo development of a video learning app and launched it on both the Google Play Store and Apple App Store.</p>
+                  <div class="project-links">
+                     <a href="#" target="_blank"><ion-icon name="logo-google-playstore"></ion-icon></a>
+                     <a href="#" target="_blank"><ion-icon name="logo-apple-appstore"></ion-icon></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">ClinicBharat Queue Management</h3>
+                   <p class="project-category">Web Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Developed a full-stack MERN application to optimize appointment scheduling and manage patient queues.</p>
+                  <div class="project-links">
+                    </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">CREW App Development</h3>
+                   <p class="project-category">App Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Translated detailed Figma designs into precise, high-quality mobile app screens and components using Flutter.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Genesis AI On-Device Agent Generator</h3>
+                   <p class="project-category">App Development, AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Cross-platform Flutter app deploying the Gemma model for local, offline creation of AI agents from user prompts.</p>
+                  <div class="project-links">
+                     <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Saathi Learning App</h3>
+                   <p class="project-category">App Development, AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Gamified Flutter learning app for underprivileged children with 1000+ questions and AI-powered explanations.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Termination Prediction Pipeline</h3>
+                   <p class="project-category">AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">ML-driven DSPy pipeline to predict loop termination in code, integrating formal verification tools like GCC & CBMC.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">CWE Matching using LLMs (DRDO)</h3>
+                   <p class="project-category">AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">On-premise solution using Llama3 to match mobile device vulnerabilities with CWE entries for the DRDO.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Wabtec NLP Pipeline</h3>
+                   <p class="project-category">AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Multi-node NLP pipeline in Langgraph to formalize natural language design requirements into DSLs for Wabtec Corp.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development web development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Jal Jeevan Mission App</h3>
+                   <p class="project-category">App & Web Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Flutter app for the Govt. of India to track water leakage in rural areas with a map interface and Go backend.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">AI Self-Checkout Kiosk App</h3>
+                   <p class="project-category">App Development, AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Flutter app for India's first AI self-checkout kiosk, allowing real-time item scanning and integrated payments.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Life@IITK Portal</h3>
+                   <p class="project-category">Web Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">An end-to-end secure portal for IIT Kanpur's Gymkhana, integrating inventory management and campus forms.</p>
+                  <div class="project-links">
+                     <a href="#" target="_blank"><ion-icon name="link-outline"></ion-icon></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">EDUWISE Course Material Sharer</h3>
+                   <p class="project-category">Web Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Secure app for sharing course materials at IITK, built with Next.js, Go, and MongoDB, impacting 7000+ students.</p>
+                  <div class="project-links">
+                    <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development ai/ml">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Trumio AI Apps (Competition)</h3>
+                   <p class="project-category">Web Development, AI/ML</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">Developed standalone AI apps for Trumio's platform, securing 5th place at the Inter IIT Tech Meet.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="app development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">QR Code Entry-Exit App (Competition)</h3>
+                   <p class="project-category">App Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">1st Runner Up at SnT Hackathon 2023. An Android app using QR codes and Firebase to manage campus entry-exit.</p>
+                  <div class="project-links">
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <div class="project-card">
+                <div class="project-card-front" style="background-image: url('')">
+                   <h3 class="project-title">Real Estate Website (RE DEV Competition)</h3>
+                   <p class="project-category">Web Development</p>
+                </div>
+                <div class="project-card-details">
+                  <p class="project-summary">1st Runner Up at Techkriti. A MERN stack website with 3D image viewing for properties and precise map locations.</p>
+                  <div class="project-links">
+                     <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228645.7277903254!2d80.17540234024808!3d26.44992322309559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c4770b127c06f%3A0x871b6531542f383!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1722673338382!5m2!1sen!2sin"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <script src="./assets/js/script.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 </body>
+
 </html>
