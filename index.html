@@ -7,10 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devansh Verma - Personal Portfolio</title>
 
+  <!--
+    - favicon
+  -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
+  <!--
+    - custom css link
+  -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!--
+    - google font link
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,21 +27,28 @@
 
 <body>
 
+  <!--
+    - #MAIN
+  -->
+
   <main>
+
+    <!--
+      - #SIDEBAR
+    -->
 
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar2.jpeg
-          " alt="Devansh Verma" width="80">
+          <img src="./assets/images/my-avatar.png" alt="Devansh Verma" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Devansh Verma">Devansh Verma</h1>
 
-          <p class="title">4th Year Undergraduate</p>
+          <p class="title">4th Year Dual Degree Student</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -86,8 +102,7 @@
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
 
-              <time datetime="2005-05-17">May 17, 2005
-              </time>
+              <time datetime="2003-01-01">Jan 01, 2003</time>
             </div>
 
           </li>
@@ -113,19 +128,19 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/devanshv17" class="social-link" target="Linkedin">
+            <a href="#" class="social-link" target="_blank">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://www.github.com/devanshv17" class="social-link" target="Github">
-              <ion-icon name="logo-github"></ion-icon>
+            <a href="#" class="social-link" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://instagram.com/devanshv1705" class="social-link" target="Instagram">
+            <a href="#" class="social-link" target="_blank">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -140,7 +155,15 @@
 
 
 
+    <!--
+      - #main-content
+    -->
+
     <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
 
       <nav class="navbar">
 
@@ -170,6 +193,10 @@
 
 
 
+      <!--
+        - #ABOUT
+      -->
+
       <article class="about  active" data-page="about">
 
         <header>
@@ -186,6 +213,10 @@
           </p>
         </section>
 
+
+        <!--
+          - service
+        -->
 
         <section class="service">
 
@@ -219,7 +250,7 @@
 
             <li class="service-item">
                 <div class="service-icon-box">
-                  <img src="./assets/images/icon-ai.svg" alt="AI icon" width="40">
+                  <img src="./assets/images/icon-design.svg" alt="AI icon" width="40">
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">AI & Machine Learning</h4>
@@ -231,7 +262,7 @@
 
               <li class="service-item">
                 <div class="service-icon-box">
-                  <img src="./assets/images/icon-trade.svg" alt="Finance icon" width="40">
+                  <img src="./assets/images/icon-photo.svg" alt="Finance icon" width="40">
                 </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title">Quantitative Trading</h4>
@@ -249,6 +280,10 @@
 
 
 
+
+      <!--
+        - #RESUME
+      -->
 
       <article class="resume" data-page="resume">
 
@@ -271,7 +306,7 @@
               <h4 class="h4 timeline-item-title">Indian Institute of Technology, Kanpur</h4>
               <span>2021 — 2026</span>
               <p class="timeline-text">
-                4th Year, Undergraduate in Mathematics and Scientific Computing.
+                4th Year, Dual Degree (BS-MS) in Mathematics and Scientific Computing.
               </p>
             </li>
 
@@ -371,6 +406,10 @@
 
 
 
+      <!--
+        - #PORTFOLIO
+      -->
+
       <article class="portfolio" data-page="portfolio">
 
         <header>
@@ -411,6 +450,7 @@
 
           <ul class="project-list">
 
+            <!-- Project 1: Axxela SOFR Prediction -->
             <li class="project-item active" data-filter-item data-category="ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -420,11 +460,13 @@
                 <div class="project-card-details">
                   <p class="project-summary">Built an ML pipeline using LSTM + XGBoost to predict daily SOFR fixes, achieving a high R2 score of 0.97.</p>
                   <div class="project-links">
-                    </div>
+                    <!-- <a href="#" target="_blank"><ion-icon name="logo-github"></ion-icon></a> -->
+                  </div>
                 </div>
               </div>
             </li>
 
+            <!-- Project 2: SuperLiving App -->
             <li class="project-item active" data-filter-item data-category="app development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -441,6 +483,7 @@
               </div>
             </li>
 
+            <!-- Project 3: ClinicBharat -->
             <li class="project-item active" data-filter-item data-category="web development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -450,11 +493,13 @@
                 <div class="project-card-details">
                   <p class="project-summary">Developed a full-stack MERN application to optimize appointment scheduling and manage patient queues.</p>
                   <div class="project-links">
-                    </div>
+                    <!-- <a href="#" target="_blank"><ion-icon name="link-outline"></ion-icon></a> -->
+                  </div>
                 </div>
               </div>
             </li>
 
+            <!-- Project 4: CREW App Development -->
             <li class="project-item active" data-filter-item data-category="app development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -469,6 +514,7 @@
               </div>
             </li>
 
+            <!-- Project 5: Genesis AI -->
             <li class="project-item active" data-filter-item data-category="app development ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -484,6 +530,7 @@
               </div>
             </li>
 
+            <!-- Project 6: Saathi Learning App -->
             <li class="project-item active" data-filter-item data-category="app development ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -498,6 +545,7 @@
               </div>
             </li>
 
+            <!-- Project 7: Termination Prediction -->
             <li class="project-item active" data-filter-item data-category="ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -512,6 +560,7 @@
               </div>
             </li>
 
+            <!-- Project 8: CWE Matching -->
             <li class="project-item active" data-filter-item data-category="ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -526,6 +575,7 @@
               </div>
             </li>
 
+            <!-- Project 9: Wabtec NLP Pipeline -->
             <li class="project-item active" data-filter-item data-category="ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -540,6 +590,7 @@
               </div>
             </li>
 
+            <!-- Project 10: Jal Jeevan Mission -->
             <li class="project-item active" data-filter-item data-category="app development web development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -554,6 +605,7 @@
               </div>
             </li>
 
+            <!-- Project 11: AI Self-Checkout Kiosk -->
             <li class="project-item active" data-filter-item data-category="app development ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -568,6 +620,7 @@
               </div>
             </li>
 
+            <!-- Project 12: Life@IITK Portal -->
             <li class="project-item active" data-filter-item data-category="web development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -583,6 +636,7 @@
               </div>
             </li>
 
+            <!-- Project 13: EDUWISE -->
             <li class="project-item active" data-filter-item data-category="web development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -598,6 +652,7 @@
               </div>
             </li>
 
+            <!-- Project 14: Trumio AI Apps -->
             <li class="project-item active" data-filter-item data-category="web development ai/ml">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -612,6 +667,7 @@
               </div>
             </li>
 
+            <!-- Project 15: QR Entry-Exit App -->
             <li class="project-item active" data-filter-item data-category="app development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -626,6 +682,7 @@
               </div>
             </li>
 
+            <!-- Project 16: Real Estate Website -->
             <li class="project-item active" data-filter-item data-category="web development">
               <div class="project-card">
                 <div class="project-card-front" style="background-image: url('')">
@@ -651,6 +708,10 @@
 
 
 
+      <!--
+        - #CONTACT
+      -->
+
       <article class="contact" data-page="contact">
 
         <header>
@@ -669,8 +730,14 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
 
+            <!-- IMPORTANT: Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="4a149625-57f6-422a-bb63-027d9e13c68c">
+
+            <!-- Optional: Subject for the email -->
+            <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+            
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
 
@@ -678,7 +745,9 @@
             </div>
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
+            
+            <div id="form-result" class="form-result"></div>
+            
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
@@ -695,11 +764,63 @@
   </main>
 
 
+  <!--
+    - custom js link
+  -->
   <script src="./assets/js/script.js"></script>
 
+  <!--
+    - ionicon link
+  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  
+  <!-- Web3Forms Submission Script -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script>
+    const form = document.querySelector('[data-form]');
+    const formResult = document.getElementById('form-result');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      formResult.innerHTML = "Sending...";
+      formResult.style.display = "block"; // Make it visible
+      
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let jsonResponse = await response.json();
+        if (response.status == 200) {
+            formResult.innerHTML = jsonResponse.message;
+        } else {
+            console.log(response);
+            formResult.innerHTML = jsonResponse.message;
+        }
+      })
+      .catch(error => {
+          console.log(error);
+          formResult.innerHTML = "Something went wrong!";
+      })
+      .then(function() {
+          form.reset();
+          setTimeout(() => {
+              formResult.style.display = "none";
+          }, 3000);
+      });
+    });
+  </script>
 
 </body>
 
 </html>
+
